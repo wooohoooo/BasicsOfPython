@@ -9,7 +9,7 @@ import pandas as pd
 
 ####IMPORTANTE: STUPID BOOKRATINGSFILE contained "-",which is unusable. Changed it to "_"
 
-ugly = pd.read_csv("BX-Book-Ratings.csv",header=0,sep=";",encoding = "ISO-8859-1")
+ugly = pd.read_csv("..\\Material\\BX-Book-Ratings.csv",header=0,sep=";",encoding = "ISO-8859-1")
 
 print(ugly.describe())
 
@@ -31,6 +31,37 @@ print("\n")
 
 print(ugly[ugly.User_ID==170155])
 
+print('Uglytest \n')
+print(ugly[ugly.User_ID==170155][['ISBN','Book_Rating']].head())
+
+#Books = ugly[ugly.User_ID=170155]['ISBN'].head()
+
+
+Books = ugly[ugly.User_ID==170155][['ISBN']]
+print(Books.head())
+#a = Books.index
+#a= Books[['ISBN']]
+a = Books.ISBN
+a = list(a)
+#a = list(a)
+for book in a[-5:-1]:
+    print("dayum")
+    print(book)
+    print(ugly[ugly.ISBN == book])
+#
+
+
+
+#Ratings = ugly[ugly.User_ID==170155][['Book_Rating']]
+
+
+
+#print users[['age', 'zip_code']].head()
+#print '\n'
+#
+## can also store in a variable to use later
+#columns_you_want = ['occupation', 'sex'] 
+#print users[columns_you_want].head()
 
 
 
